@@ -1,13 +1,30 @@
 import React from 'react'
+import { Route, Routes } from "react-router-dom"
+import Home from './pages/Home'
+import Menu from './pages/Menu'
+import Blog from './pages/Blog'
+import Contact from './pages/Contact'
+import Cart from './pages/Cart'
+import AddressForm from './pages/AddressForm'
+import MyOrders from './pages/MyOrders'
+import Footer from './components/Footer'
+import Header from './components/Header'
 
 const App = () => {
   return (
-    <div className='flex gap-12'>
-      <button className="btn-solid">Solid</button>
-      <button className="btn-light">Light</button>
-      <button className="btn-outline">Outline</button>
-      <button className="btn-white">White</button>
-    </div>
+    <main className="overflow-x-hidden text-textColor">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/address-form" element={<AddressForm />} />
+        <Route path="/my-orders" element={<MyOrders/>} />
+      </Routes>
+      <Footer />
+    </main>
   )
 }
 
