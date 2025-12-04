@@ -1,4 +1,5 @@
-import logo from "./logo.svg";
+import logo from "./logo.png";
+import logoIcon from "./logo-icon.svg";
 import search from "./search.svg";
 import user from "./user.svg";
 import menu from "./menu.svg";
@@ -103,6 +104,7 @@ import blog7 from "./blogs/blog7.jpg";
 import blog8 from "./blogs/blog8.jpg";
 
 export const assets = {
+  logoIcon,
   logo,
   search,
   user,
