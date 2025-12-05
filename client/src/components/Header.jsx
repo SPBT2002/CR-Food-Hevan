@@ -6,7 +6,7 @@ import Navbar from './Navbar'
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
 
-  const toggleMenu = () => setMenuOpened((prev) => !prev)
+  const toggleMenu = () => setMenuOpened(prev=> !prev)
 
   return (
     <header className='absolute top-0 left-0 right-0 z-50 py-3'>
@@ -28,9 +28,10 @@ const Header = () => {
         </div>
         {/* BUTTONS & PROFILE */}
         <div className='flex flex-1 items-center sm:justify-end gap-x-4 sm:gap-x-8'>
-          {/* Menu Taggle */}
+          {/* Menu Toggle */}
           <div className='relative lg:hidden w-7 h-6'>
             <img src={assets.menu} alt="" className={'absolute inset-0 lg:hidden cursor-pointer transition-opacity duration-700 ${ menuOpened ? "opacity-0" : "opacity-100"}'} />
+
             <img src={assets.menuClose} alt="" className={'absolute inset-0 lg:hidden cursor-pointer transition-opacity duration-700 ${ menuOpened ? "opacity-100" : "opacity-0"}'} />
           </div>
           {/* Cart */}
