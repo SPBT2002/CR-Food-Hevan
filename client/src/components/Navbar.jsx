@@ -7,7 +7,7 @@ const Navbar = ({containerStyles, setMenuOpened}) => {
       { path: '/menu', title: 'Menu' },
       { path: '/blog', title: 'Blog' },
       { path: '/contact', title: 'Contact' },
-    ]
+    ];
 
   return (
     <nav className={containerStyles}>
