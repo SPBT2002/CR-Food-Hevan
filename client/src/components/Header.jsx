@@ -15,19 +15,21 @@ const Header = () => {
         {/* LOGO */}
         <div className='flex flex-1'>
           <Link to={'/'} className='flex items-end'>
-            <img src={assets.logo} alt="HeaderLogo" className='h-20'/>
+            <img src={assets.logo} alt="HeaderLogo" className='h-23'/>
             <div>
-              <span className='hidden sm:block font-extrabold text-3xl relative tracking-[1px]'>CandRiya </span>
-            <span className='hidden sm:block font-extrabold text-2xl relative bottom-2.5 left-0.5 tracking-[0.1px] text-solid'>FooD HevaN</span>
+              <span className='hidden sm:block font-extrabold text-3xl relative bottom-3 tracking-[1px]'>
+              <span className='text-solid'>C</span>and<span className='text-solid'>R</span>iya 
+              </span>
+            <span className='hidden sm:block font-extrabold text-2xl relative bottom-5 left-0.5 tracking-[0.1px] text-solid'>FooD HevaN</span>
             </div>
           </Link>
         </div>
         {/* NAVBAR */}
         <div className='flexCenter flex-1'>
           <Navbar setMenuOpened={setMenuOpened} containerStyles={`${
-            menuOpened ? 
-            "flex-items-start flex-col gap-y-8 fixed top-16 right-6 p-5 bg-white shadow-md w-52 ring-1 ring-Slate-900/5 z-50" : "hidden lg:flex gap-x-5 xl:gap-x-1 medium-15 p-1"
-          }`}/>
+  menuOpened ? 
+  "flex items-start flex-col gap-y-8 fixed top-16 right-6 p-5 bg-white shadow-md w-52 ring-1 ring-Slate-900/5 z-50" : "hidden lg:flex gap-x-5 xl:gap-x-1 medium-15 p-1"
+}`}/>
         </div>
         {/* BUTTONS & PROFILE */}
         <div className='flex flex-1 items-center sm:justify-end gap-x-4 sm:gap-x-8'>
