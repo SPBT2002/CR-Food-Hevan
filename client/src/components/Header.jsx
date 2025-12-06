@@ -15,7 +15,7 @@ const Header = () => {
         {/* LOGO */}
         <div className='flex flex-1'>
           <Link to={'/'} className='flex items-end'>
-            <img src={assets.logo} alt="Logo" className='h-20'/>
+            <img src={assets.logo} alt="HeaderLogo" className='h-20'/>
             <div>
               <span className='hidden sm:block font-extrabold text-3xl relative tracking-[1px]'>CandRiya </span>
             <span className='hidden sm:block font-extrabold text-2xl relative bottom-2.5 left-0.5 tracking-[0.1px] text-solid'>FooD HevaN</span>
@@ -24,15 +24,18 @@ const Header = () => {
         </div>
         {/* NAVBAR */}
         <div className='flexCenter flex-1'>
-          <Navbar setMenuOpened={setMenuOpened} containerStyles={''}/>
+          <Navbar setMenuOpened={setMenuOpened} containerStyles={`${
+            menuOpened ? 
+            "flex-items-start flex-col gap-y-8 fixed top-16 right-6 p-5 bg-white shadow-md w-52 ring-1 ring-Slate-900/5 z-50" : "hidden lg:flex gap-x-5 xl:gap-x-1 medium-15 p-1"
+          }`}/>
         </div>
         {/* BUTTONS & PROFILE */}
         <div className='flex flex-1 items-center sm:justify-end gap-x-4 sm:gap-x-8'>
           {/* Menu Toggle */}
           <div className='relative lg:hidden w-7 h-6'>
-            <img src={assets.menu} alt="" className={'absolute inset-0 lg:hidden cursor-pointer transition-opacity duration-700 ${ menuOpened ? "opacity-0" : "opacity-100"}'} />
+            <img onClick={toggleMenu} src={assets.menu} alt="" className={`absolute inset-0 lg:hidden cursor-pointer transition-opacity duration-700 ${menuOpened ? "opacity-0" : "opacity-100"}`} />
 
-            <img src={assets.menuClose} alt="" className={'absolute inset-0 lg:hidden cursor-pointer transition-opacity duration-700 ${ menuOpened ? "opacity-100" : "opacity-0"}'} />
+            <img onClick={toggleMenu} src={assets.menuClose} alt="" className={`absolute inset-0 lg:hidden cursor-pointer transition-opacity duration-700 ${menuOpened ? "opacity-100" : "opacity-0"}`} />
           </div>
           {/* Cart */}
           <div className='relative cursor-pointer'>
