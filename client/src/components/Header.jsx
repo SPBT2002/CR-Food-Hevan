@@ -28,7 +28,7 @@ const Header = () => {
         <div className='flexCenter flex-1'>
           <Navbar setMenuOpened={setMenuOpened} containerStyles={`${
   menuOpened ? 
-  "flex items-start flex-col gap-y-8 fixed top-16 right-6 p-5 bg-white shadow-md w-52 ring-1 ring-Slate-900/5 z-50" : "hidden lg:flex gap-x-5 xl:gap-x-1 medium-15 p-1"
+  "flex items-start flex-col gap-y-4 fixed top-20 right-6 p-6 bg-white rounded-xl shadow-xl w-64 ring-1 ring-slate-900/5 z-50" : "hidden lg:flex gap-x-5 xl:gap-x-1 medium-15 p-1"
 }`}/>
         </div>
         {/* BUTTONS & PROFILE */}
