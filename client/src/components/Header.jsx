@@ -48,7 +48,7 @@ const Header = () => {
           <div>
             <button className='btn-solid flexCenter gap-2'>
               Login
-              <img src={assets.user} alt="" className='invert w-5'/>
+              <img src={assets.user} alt="" className='invert w-6'/>
             </button>
           </div>
         </div>
