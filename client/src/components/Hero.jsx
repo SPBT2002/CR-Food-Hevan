@@ -14,17 +14,17 @@ const Hero = () => {
                     <h2 className='uppercase |mb-0 traking-[0.22rem]'>
                         <span className='text-solidOne'>Get More </span><span className='text-solidTwo'>for Less - 25% off!</span>
                     </h2 >
-                    <h1>
+                    <h1 className='font-[800] leading-none'>
                         on Rice & Curries
                     </h1>
-                    <div>
-                        <span>
-                            <h3>Starting From</h3>
-                            <span>$</span>04.
+                    <div className='flex items-center'>
+                        <h3>Starting From</h3>
+                        <span className='bg-white p-1 inline-block -rotate-2 ml-2.5 text-5xl font-extrabold'>
+                            <span className='text-2xl relative bottom-3'> $</span>04.
                             <span className='text-2xl'>99</span>
                         </span>
                     </div>
-                    <button>Shop Now</button>
+                    <button className='btn-solid rounded-3 p-5 w-52 text-lg font-bold mt-8'>Shop Now</button>
                 </div>
                 {/* Bottom */}
                 <div className="pb-9">
