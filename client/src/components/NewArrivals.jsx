@@ -11,8 +11,8 @@ import { Autoplay } from 'swiper/modules';
 
 const NewArrivals = () => {
   return (
-    <section>
-        <Title />
+    <section className='max-padd-container py-22 xl:py-28 bg-white'>
+        <Title title1={"New"} title2={"Arrivals"} title1Styles={"pb-10"}/>
         <Swiper
         spaceBetween={30}
         autoplay={{
@@ -40,6 +40,9 @@ const NewArrivals = () => {
         <SwiperSlide>Slide 2</SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
         <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>Slide 5</SwiperSlide>
+        <SwiperSlide>Slide 6</SwiperSlide>
+        <SwiperSlide>Slide 7</SwiperSlide>
       </Swiper>
     </section>
   )
