@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import Title from './Title'
 import { dummyProducts } from '../assets/data';
+import Item from './Item';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -8,8 +9,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 // import required modules
 import { Autoplay } from 'swiper/modules';
-
-
 
 const NewArrivals = () => {
   const [NewArrivals, setnewArrivals] = useState([])
@@ -24,7 +23,7 @@ const NewArrivals = () => {
         <Swiper
         spaceBetween={30}
         autoplay={{
-          delay: 2500,
+          delay: 3500,
           disableOnInteraction: false,
         }}
         breakpoints={{
@@ -42,15 +41,13 @@ const NewArrivals = () => {
             },
         }}
         modules={[Autoplay]}
-        className="mySwiper"
+        className="min-h-[399px]"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
+        {NewArrivals.map((product)=> (
+          <SwiperSlide key={product._id}>
+            <Item product={product}/>
+         </SwiperSlide>
+        ))}
       </Swiper>
     </section>
   )
