@@ -6,7 +6,7 @@ const Title = ({
   titleStyles,
   title1Styles,
   paraStyles,
-  para
+  para,
 }) => {
   return (
     <div className={`${titleStyles} flexCenter flex-col`}>
