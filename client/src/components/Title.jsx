@@ -6,9 +6,9 @@ const Title = ({
   titleStyles,
   title1Styles,
   paraStyles,
-  para
+  para,
 }) => {
-  return 
+  return (
     <div className={`${titleStyles} flexCenter flex-col`}>
         <h3 className={`${title1Styles} uppercase`}>
             {title1}
@@ -17,11 +17,11 @@ const Title = ({
             </span>
         </h3>
         <p className={`${paraStyles} max-w-lg mt-2 text-center`}>
-
+            {para ? para :"Discover fresh foods that delight your taste, nourish your body, and bring joy to every meal."}
         </p>
 
     </div>
-  
+  );
 };
 
 export default Title;
