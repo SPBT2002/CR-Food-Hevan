@@ -57,22 +57,22 @@ const Item = ({product}) => {
               </button>
             ))}
           </div>
-          <h4>{currency}{product.price[size]}</h4>
+          <h4 className='text-solidOne'>{currency}{product.price[size]}</h4>
         </div>
         {/* Order Info & Button */}
-        <div>
-          <div>
-            <div>
+        <div className='flexBetween rounded-xl pl-5 text-[13px] font-semibold'>
+          <div className='flexStart gap-5'>
+            <div className='flex flex-col gap-1 relative bottom-1.5'>
               <h5>Prep</h5>
               <p className='text-x5'>5min</p>
             </div>
-            <hr />
-            <div>
+            <hr className="h-8 w-[1px] bg-tertiary/10 border-none"/>
+            <div className='flex flex-col gap-1 relative bottom-1.5'>
               <h5>Cook</h5>
               <p className='text-x5'>20min</p>
             </div>
           </div>
-          <div>
+          <div className='flex flex-col gap-1'>
             <button>
               <img src={assets.cartAdd} alt="" width={20}/>
             </button>
