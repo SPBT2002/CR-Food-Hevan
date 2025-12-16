@@ -64,12 +64,12 @@ const Item = ({product}) => {
           <div className='flexStart gap-5'>
            <div className='flex flex-col gap-0.5'>
   <h5 className='font-semibold'>Prep</h5>
-  <p className='text-xs font-normal'>5m</p>
+  <p className='text-xs font-normal'>5min</p>
 </div>
 <hr className="h-8 w-[1px] bg-tertiary/20 border-none"/>
 <div className='flex flex-col gap-0.5'>
   <h5 className='font-semibold'>Cook</h5>
-  <p className='text-xs font-normal'>20m</p>
+  <p className='text-xs font-normal'>20min</p>
 </div>
 </div>
           <div className='flex items-end'>
