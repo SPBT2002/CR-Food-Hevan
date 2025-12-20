@@ -2,10 +2,13 @@ import React, {useState} from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { assets } from '../assets/data'
 import Navbar from './Navbar'
+import {useClerk, UserButton} from '@clerk/clerk-react'
+import { useAppContext } from '../context/AppContext'
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
-
+  const {openSignIn} = useClark()
+  const {navigate, user} = useAppContext()
   const toggleMenu = () => setMenuOpened(prev=> !prev)
 
   return (
@@ -46,10 +49,15 @@ const Header = () => {
           </div>
           {/* User Profile */}
           <div>
-            <button className='btn-solid flexCenter gap-2'>
+            {user ? (
+               <UserButton></UserButton>
+            ) : (
+            
+            <button onClick={openSignIn} className='btn-solid flexCenter gap-2'>
               Login
               <img src={assets.user} alt="" className='invert w-6'/>
             </button>
+            )}
           </div>
         </div>
       </div>

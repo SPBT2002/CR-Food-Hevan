@@ -1,9 +1,10 @@
 import React,{useState} from 'react'
 import { assets } from '../assets/data'
+import { useAppContext } from '../context/AppContext'
 
 const Item = ({product}) => {
   const [size, setSize] = useState(product.sizes[0]);
-  const currency = '$';
+  const { currency } = useAppContext()
 
   return (
     <div className='relative mt-24 group'>
