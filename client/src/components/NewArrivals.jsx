@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import Title from './Title'
 import { dummyProducts } from '../assets/data';
 import Item from './Item';
+import { useAppContext } from '../context/AppContext';  // Add this import
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -12,10 +13,11 @@ import { Autoplay } from 'swiper/modules';
 
 const NewArrivals = () => {
   const [NewArrivals, setnewArrivals] = useState([])
+  const {products} = useAppContext()
 
   useEffect(() => {
-    const data = dummyProducts.filter((item)=> item.inStock).slice(0, 10)
-  setnewArrivals(data)}, [dummyProducts])
+    const data = products.filter((item)=> item.inStock).slice(0, 10)
+  setnewArrivals(data)}, [products])  // Also change dependency from dummyProducts to products
 
   return (
     <section className='max-padd-container py-22 xl:py-28 bg-white'>
