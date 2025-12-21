@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import Title from './Title'
 import { dummyProducts } from '../assets/data';
 import Item from './Item';
-import { useAppContext } from '../context/AppContext';  // Add this import
+import { useAppContext } from '../context/AppContext';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
