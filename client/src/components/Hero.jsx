@@ -10,7 +10,7 @@ const Hero = () => {
             <div className='mx-auto max-w-[1440px] px-4 flex flex-col justify-between h-full'>
                 {/* Top */}
                 <div className='max-w-[788px] pt-44 lg:pt-58'>
-                    <h3>Welcome to Candriya Food Hevan</h3>
+                    <h3>Welcome to CandRiya Food Hevan</h3>
                     <h2 className='uppercase |mb-0 traking-[0.22rem]'>
                         <span className='text-solidOne'>Get More </span><span className='text-solidTwo'>for Less - 25% off!</span>
                     </h2 >
