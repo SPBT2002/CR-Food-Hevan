@@ -8,8 +8,9 @@ const PopularProducts = () => {
     const { products } = useAppContext()  // Fixed: use object destructuring
     
     useEffect(() => {
-        const data = products.filter((item)=> item.popular && item.stock).slice(0, 5)
-      setPopularProducts(data)}, [products]) 
+        const data = products.filter((item)=> item.popular && item.inStock).slice(0, 5)
+      setPopularProducts(data);
+    }, [products]); 
 
   return (
     <section className='max-padd-container py-22 xl:py-28 bg-white'>
@@ -18,7 +19,7 @@ const PopularProducts = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
         {popularProducts.map((product)=> (
           <div key={product._id}>
-            <Item product={product}/>
+            <Item product={product} />
          </div>
         ))}
       </div>

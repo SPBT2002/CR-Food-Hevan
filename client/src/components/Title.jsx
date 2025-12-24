@@ -9,14 +9,14 @@ const Title = ({
   para,
 }) => {
   return (
-    <div className={`${titleStyles} flexCenter flex-col`}>
+    <div className={`flexCenter flex-col ${titleStyles}`}>
         <h3 className={`${title1Styles} uppercase`}>
             {title1}
              <span className="font-light text-solidTwo">
               {title2}
             </span>
         </h3>
-        <p className={`${paraStyles} max-w-lg mt-2 text-center`}>
+        <p className={`max-w-lg mt-2 text-center ${paraStyles}`}>
             {para ? para :"Discover fresh foods that delight your taste, nourish your body, and bring joy to every meal."}
         </p>
 

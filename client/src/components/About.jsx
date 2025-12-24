@@ -9,7 +9,7 @@ const About = () => {
         <div className='flexCenter flex-col gap-16 xl:gap-8 xl:flex-row'>
         {/* Left Side*/}
             <div className='flex-1'>
-                <Title title1={"Discover Our"} title2={" Food App's key features!"} title1Styles={"items-start pb-10"} paraStyles={"text-start"}/>
+                <Title title1={"Discover Our"} title2={" Food App's key features!"} titleStyles={"items-start"} title1Styles={"pb-4"} paraStyles={"text-start pb-8"}/>
                 <div className='flex flex-col items-start gap-y-4'>
                     <div className='flexCenter gap-x-4'>
                         <div className='h-16 min-w-16 bg-solid flexCenter rounded-md'>
