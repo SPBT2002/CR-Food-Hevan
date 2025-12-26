@@ -13,8 +13,8 @@ const Testimonial = () => {
                 <div className="flex items-center gap-4 px-5 py-4 border-b border-slate-900/10">
                     <img className="h-12 w-12 rounded-full" src={assets.user1}  alt="userImage1" />
                     <div>
-                        <h1 className="text-lg font-medium text-gray-800">Donald Jackman</h1>
-                        <p className="text-gray-800/80">Content Creator</p>
+                        <h4>Donald Jackman</h4>
+                        <p>Content Creator</p>
                     </div>
                 </div>
                 <div className="p-5 pb-7">
@@ -34,8 +34,8 @@ const Testimonial = () => {
                 <div className="flex items-center gap-4 px-5 py-4 border-b border-slate-900/10">
                     <img className="h-12 w-12 rounded-full" src={assets.user2} alt="userImage2" />
                     <div>
-                        <h1 className="text-lg font-medium text-gray-800">Richard Nelson</h1>
-                        <p className="text-gray-800/80">Instagram Influencer</p>
+                        <h4>Richard Nelson</h4>
+                        <p>Instagram Influencer</p>
                     </div>
                 </div>
                 <div className="p-5 pb-7">
@@ -55,8 +55,8 @@ const Testimonial = () => {
                 <div className="flex items-center gap-4 px-5 py-4 border-b border-slate-900/10">
                     <img className="h-12 w-12 rounded-full" src={assets.user3} alt="userImage3" />
                     <div>
-                        <h1 className="text-lg font-medium text-gray-800">James Washington</h1>
-                        <p className="text-gray-800/80">Digital Content Creator</p>
+                        <h4>James Washington</h4>
+                        <p>Digital Content Creator</p>
                     </div>
                 </div>
                 <div className="p-5 pb-7">
