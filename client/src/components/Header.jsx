@@ -7,8 +7,8 @@ import { useAppContext } from '../context/AppContext'
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
-  const {openSignIn} = useClerk()
-  const { user} = useAppContext()
+  const { openSignIn } = useClerk()
+  const { navigate, user } = useAppContext()
   const toggleMenu = () => setMenuOpened(prev=> !prev)
 
   const OrderIcon = () => (
@@ -63,7 +63,7 @@ const Header = () => {
             <img onClick={toggleMenu} src={assets.menuClose} alt="" className={`absolute inset-0 lg:hidden cursor-pointer transition-opacity duration-700 ${menuOpened ? "opacity-100" : "opacity-0"}`} />
           </div>
           {/* Cart */}
-          <div className='relative cursor-pointer'>
+          <div onClick={()=> navigate('/cart')} className='relative cursor-pointer'>
             <img src={assets.cartAdded} alt="" className='min-w-11 bg-white rounded-full p-2'/>
               <label className="absolute bottom-10 right-1 text-xs font-bold bg-solid text-white flexCenter rounded-full w-9">0</label>
           </div>
@@ -84,7 +84,7 @@ const Header = () => {
                     <UserButton.Action
                     Label="My Orders"
                     LabelIcon={<OrderIcon />}
-                    onClick={()=> Navigate('/my-orders')}
+                    onClick={()=> navigate('/my-orders')}
                     />
                   </UserButton.MenuItems>
                </UserButton>
