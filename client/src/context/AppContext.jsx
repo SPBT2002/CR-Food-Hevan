@@ -1,7 +1,8 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useUser } from '@clerk/clerk-react'
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useUser } from '@clerk/clerk-react';
 import { dummyProducts } from '../assets/data';
+import toast from 'react-hot-toast';
 
 const AppContext = createContext()
 
@@ -21,7 +22,29 @@ export const AppContextProvider = ({children}) => {
 
     //Add Products to  Cart
     const addCart = (itemId, size) => {
-        if(!size) return toast
+        if(!size) return toast.error("Please select a size first")
+        let cartData = structuredClone(cartItems)
+        if (!cartData[itemId]) cartData[itemId] || {}
+        cartData[itemId][size] = (cartData[itemId][size] || 0) + 1
+        setCartItems(cartData)
+    }
+
+    // Get Cart Count
+    const getCartCount = () => {
+        let count = 0
+        for(const itemId in cartItems) {
+            for(const size in cartItems[itemId]) {
+                count += cartItems[itemId][size]
+            }
+        }
+        return count
+    }
+
+    // Update Cart Item Quantity
+    const updateQuantity = (itemId, size, quantity) => {
+        let cartData = structuredClone(cartItems)
+        cartData[itemId][size] = quantity
+        setCartItems(cartData)
     }
 
     useEffect(() => {
@@ -33,9 +56,16 @@ export const AppContextProvider = ({children}) => {
         products,
         fetchProducts,
         currency,
+        navigate,
         delivery_charge,
         searchQuery,
         setsearchQuery,
+        cartItems,
+        setCartItems,
+        addCart,
+        getCartCount,
+        updateQuantity,
+        
     };
 
   return (
