@@ -8,7 +8,7 @@ import { useAppContext } from '../context/AppContext'
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
   const { openSignIn } = useClerk()
-  const { navigate, user } = useAppContext()
+  const { navigate, user, getCartCount } = useAppContext()
   const toggleMenu = () => setMenuOpened(prev=> !prev)
 
   const OrderIcon = () => (
@@ -65,7 +65,7 @@ const Header = () => {
           {/* Cart */}
           <div onClick={()=> navigate('/cart')} className='relative cursor-pointer'>
             <img src={assets.cartAdded} alt="" className='min-w-11 bg-white rounded-full p-2'/>
-              <label className="absolute bottom-10 right-1 text-xs font-bold bg-solid text-white flexCenter rounded-full w-9">0</label>
+              <label className="absolute bottom-10 right-1 text-xs font-bold bg-solid text-white flexCenter rounded-full w-9"> {getCartCount()} </label>
           </div>
           {/* User Profile */}
           <div>
