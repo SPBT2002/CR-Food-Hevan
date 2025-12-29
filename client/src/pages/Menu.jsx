@@ -4,7 +4,7 @@ import { useAppContext } from '../context/AppContext'
 import Searchinput from '../components/Searchinput'
 
 const Menu = () => {
-  const {products,searchQuery} = useAppContext()
+  const {products, searchQuery} = useAppContext()
   const [category, setCategory] = useState([])
   const [type, settype] = useState([])
   const [selectedSort, setselectedSort] = useState('relevant')
@@ -72,7 +72,7 @@ useEffect(() => {
           <div className='flex flex-col gap-2 text-sm font-light'>
           {availableTypes.map((typ)=> (
           <label key={typ} className="flex gap-2 text-sm font-medium text-gray-30">
-            <input onChange={(e)=> toggleFilter(e.target.value, settype)} type="checkbox" value={typ} checked={type.includes(typ)} className='w-3' />
+            <input onChange={(e)=> toggleFilter(e.target.value, setType)} type="checkbox" value={typ} checked={type.includes(typ)} className='w-3' />
               {typ}
           </label>
           ))}
