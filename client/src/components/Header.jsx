@@ -60,7 +60,7 @@ const Header = () => {
           <div className='relative lg:hidden w-7 h-6'>
             <img onClick={toggleMenu} src={assets.menu} alt="" className={`absolute inset-0 lg:hidden cursor-pointer transition-opacity duration-700 ${menuOpened ? "opacity-0" : "opacity-100"}`} />
 
-            <img onClick={toggleMenu} src={assets.menuClose} alt="" className={`absolute inset-0 lg:hidden cursor-pointer transition-opacity duration-700 ${menuOpened ? "opacity-100" : "opacity-0"}`} />
+            <img onClick={toggleMenu} src={assets.menuClose} alt="" width={29} className={`absolute inset-0 lg:hidden cursor-pointer transition-opacity duration-700 ${menuOpened ? "opacity-100" : "opacity-0"}`} />
           </div>
           {/* Cart */}
           <div onClick={()=> navigate('/cart')} className='relative cursor-pointer'>
