@@ -9,7 +9,7 @@ const AppContext = createContext()
 export const AppContextProvider = ({children}) => {
     const [products, setProducts] = useState([]);
     const [searchQuery,setsearchQuery] = useState("")
-    const [cartItems, setCartItems] = useState([])
+    const [cartItems, setCartItems] = useState({})  // Changed from [] to {}
     const currency = import.meta.env.VITE_CURRENCY
     const delivery_charge = 10
     const navigate = useNavigate()
@@ -24,9 +24,10 @@ export const AppContextProvider = ({children}) => {
     const addCart = (itemId, size) => {
         if(!size) return toast.error("Please select a size first")
         let cartData = structuredClone(cartItems)
-        if (!cartData[itemId]) cartData[itemId] || {}
+        if (!cartData[itemId]) cartData[itemId] = {}
         cartData[itemId][size] = (cartData[itemId][size] || 0) + 1
         setCartItems(cartData)
+        toast.success("Added to cart!")  // Added success message
     }
 
     // Get Cart Count
@@ -43,7 +44,15 @@ export const AppContextProvider = ({children}) => {
     // Update Cart Item Quantity
     const updateQuantity = (itemId, size, quantity) => {
         let cartData = structuredClone(cartItems)
-        cartData[itemId][size] = quantity
+        if (quantity === 0) {
+            delete cartData[itemId][size]
+            // If no sizes left for this item, remove the item entirely
+            if (Object.keys(cartData[itemId]).length === 0) {
+                delete cartData[itemId]
+            }
+        } else {
+            cartData[itemId][size] = quantity
+        }
         setCartItems(cartData)
     }
 
