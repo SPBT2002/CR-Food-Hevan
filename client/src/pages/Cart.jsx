@@ -32,12 +32,27 @@ const Cart = () => {
 
   const decrement = (id, size) => {
     const currentQuantity = cartItems[id][size]
-    updateQuantity(id, size, currentQuantity + 1)
+    if(currentQuantity > 1) {
+    updateQuantity(id, size, currentQuantity - 1)
   }
-
-  return (
-    <div>Cart</div>
-  )
 }
+
+  return products && cartItems ? (
+  <div>
+    {/* CONTAINER */}
+    <div>
+      {/* Left Side */}
+      <div>
+        <Title title1={"Cart"} title2={"Overview"} titleStyles={"pb-5 items-start"} para={"hidden"} />
+      </div> 
+      {/* Right Side */}
+      <div></div>
+    </div>
+  </div>
+) : (
+  <div>Loading...</div>  // Add this else clause
+)
+}
+
 
 export default Cart
