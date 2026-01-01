@@ -27,16 +27,16 @@ const Cart = () => {
   }, [products, cartItems])
 
   const increment = (id, size) => {
-    const currentQuantity = cartItems[id][size]
+    const currentQuantity = cartItems[id]?.[size] || 0
     updateQuantity(id, size, currentQuantity + 1)
   }
 
   const decrement = (id, size) => {
-    const currentQuantity = cartItems[id][size]
+    const currentQuantity = cartItems[id]?.[size] || 0
     if(currentQuantity > 1) {
       updateQuantity(id, size, currentQuantity - 1)
     }
-  };
+  }
 
   return (
     <div className='max-padd-container py-16 pt-28 bg-primary'>
@@ -59,7 +59,11 @@ const Cart = () => {
               // Add null check for product
               if (!product) return null
               
-              const quantity = cartItems[item._id][item.size]
+              // Safe access to quantity with optional chaining
+              const quantity = cartItems[item._id]?.[item.size] || 0
+              
+              // Skip if quantity is 0 (item was deleted)
+              if (quantity === 0) return null
               
               return (
                 <div key={i} className='grid grid-cols-[3fr_1fr_0.5fr] gap-4 items-center bg-white p-4 rounded-xl'>
