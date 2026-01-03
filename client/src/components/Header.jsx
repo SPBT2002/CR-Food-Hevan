@@ -8,7 +8,7 @@ import { useAppContext } from '../context/AppContext'
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
   const { openSignIn } = useClerk()
-  const { navigate, user } = useAppContext()
+  const { navigate, user, getCartCount } = useAppContext()
   const toggleMenu = () => setMenuOpened(prev=> !prev)
 
   const OrderIcon = () => (
@@ -60,12 +60,12 @@ const Header = () => {
           <div className='relative lg:hidden w-7 h-6'>
             <img onClick={toggleMenu} src={assets.menu} alt="" className={`absolute inset-0 lg:hidden cursor-pointer transition-opacity duration-700 ${menuOpened ? "opacity-0" : "opacity-100"}`} />
 
-            <img onClick={toggleMenu} src={assets.menuClose} alt="" className={`absolute inset-0 lg:hidden cursor-pointer transition-opacity duration-700 ${menuOpened ? "opacity-100" : "opacity-0"}`} />
+            <img onClick={toggleMenu} src={assets.menuClose} alt="" width={29} className={`absolute inset-0 lg:hidden cursor-pointer transition-opacity duration-700 ${menuOpened ? "opacity-100" : "opacity-0"}`} />
           </div>
           {/* Cart */}
           <div onClick={()=> navigate('/cart')} className='relative cursor-pointer'>
             <img src={assets.cartAdded} alt="" className='min-w-11 bg-white rounded-full p-2'/>
-              <label className="absolute bottom-10 right-1 text-xs font-bold bg-solid text-white flexCenter rounded-full w-9">0</label>
+              <label className="absolute bottom-10 right-1 text-xs font-bold bg-solid text-white flexCenter rounded-full w-9"> {getCartCount()} </label>
           </div>
           {/* User Profile */}
           <div>

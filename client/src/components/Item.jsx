@@ -2,9 +2,11 @@ import React,{useState} from 'react'
 import { assets } from '../assets/data'
 import { useAppContext } from '../context/AppContext'
 
+
 const Item = ({product}) => {
+  const { currency, addCart } = useAppContext()
   const [size, setSize] = useState(product.sizes[0]);
-  const { currency } = useAppContext()
+  
 
   return (
     <div className='relative mt-24 group'>
@@ -67,14 +69,14 @@ const Item = ({product}) => {
   <h5 className='font-semibold'>Prep</h5>
   <p className='text-xs font-normal'>5min</p>
 </div>
-<hr className="h-8 w-[1px] bg-tertiary/20 border-none"/>
+<hr className="h-8 w-px bg-tertiary/20 border-none"/>
 <div className='flex flex-col gap-0.5'>
   <h5 className='font-semibold'>Cook</h5>
   <p className='text-xs font-normal'>20min</p>
 </div>
 </div>
           <div className='flex items-end'>
-  <button className='bg-solidOne hover:bg-solid transition-all rounded-tr-3xl rounded-bl-3xl p-4 active:scale-95'>
+  <button onClick={()=> addCart(product._id, size)} className='bg-solidOne hover:bg-solid transition-all rounded-tr-3xl rounded-bl-3xl p-4 active:scale-95 cursor-pointer'>
     <img src={assets.cartAdd} alt="" width={24} height={24}/>
   </button>
 </div>

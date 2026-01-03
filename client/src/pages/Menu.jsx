@@ -4,7 +4,7 @@ import { useAppContext } from '../context/AppContext'
 import Searchinput from '../components/Searchinput'
 
 const Menu = () => {
-  const {products,searchQuery} = useAppContext()
+  const {products, searchQuery} = useAppContext()
   const [category, setCategory] = useState([])
   const [type, settype] = useState([])
   const [selectedSort, setselectedSort] = useState('relevant')

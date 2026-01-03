@@ -5,7 +5,7 @@ import { useAppContext } from '../context/AppContext';
 
 const PopularProducts = () => {
     const [popularProducts, setPopularProducts] = useState([])
-    const { products } = useAppContext()  // Fixed: use object destructuring
+    const { products } = useAppContext()
     
     useEffect(() => {
         const data = products.filter((item)=> item.popular && item.inStock).slice(0, 5)
