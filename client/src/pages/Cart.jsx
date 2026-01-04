@@ -37,8 +37,10 @@ const Cart = () => {
   }
 
   return (
-    <div className='max-padd-container py-16 pt-28 bg-primary'>
-      <div className='flex flex-col xl:flex-row gap-20 xl:gap-28'>
+  <div className='max-padd-container px-0 mt-25'>
+    {/* White Header Bar */}
+    <div className='bg-white h-20 w-full -mt-20 mb-10'></div>
+    <div className='flex flex-col xl:flex-row gap-20 xl:gap-28'>
         <div className='flex-1 flex flex-col gap-3 text-[95%]'>
           <Title title1={"Cart "} title2={"Overview"} titleStyles={"pb-5 items-start"} paraStyles={"hidden"} />
         
@@ -96,8 +98,8 @@ const Cart = () => {
           )}
         </div> 
         
-        <div className='xl:w-80'>
-          <div className='bg-white p-5 rounded-xl'>
+        <div className='xl:w-80 xl:mt-19'>
+          <div className='bg-white p-6 rounded-xl'>
             <CartTotal />
           </div>
         </div>
