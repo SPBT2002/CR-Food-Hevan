@@ -40,8 +40,10 @@ useEffect(() => {
   const totalPages = 7
 
   return (
-    <div className='max-padd-container px-0 mt-25'>
-      {/* CONTAINER */}
+  <div className='max-padd-container px-0 mt-25'>
+    {/* White Header Bar */}
+    <div className='bg-white h-20 w-full -mt-20 mb-10'></div>
+    {/* CONTAINER */}
       <div className='flex flex-col sm:flex-row gap-6'>
       {/* Filters - Left Side */}
       <div className='min-w-72 bg-white p-4 pl-6 lg:pl-12 rounded-r-xl my-4'>
