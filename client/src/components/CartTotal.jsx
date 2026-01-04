@@ -20,10 +20,14 @@ const dummyAddress = [
 const CartTotal = () => {
   const {
     navigate,
+    currency,
+    method,
+    setMethod,
     delivery_charge,
     getCartCount,
     user,
     cartItems,
+    setCartItems,
     products,
   } = useAppContext();
 
@@ -145,7 +149,7 @@ const CartTotal = () => {
         <div className='flex justify-between items-center pt-4 mt-2'>
           <p className='text-gray-900 font-bold text-xl'>Total Amount:</p>
           <p className='text-gray-900 font-bold text-xl'>${totalAmount}</p>
-        </div>
+        </div> 
       </div>
 
       {/* Proceed Button */}
